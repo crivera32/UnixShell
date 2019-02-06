@@ -22,7 +22,7 @@
 //--------------------------------------------------------------------------------
 // Handler for SIGINT
 static void handler1(int sig) {
-	char string[] = "SIGINT handled\n361> ";
+	char string[] = "SIGINT handled\nshell> ";
 	write(1, string, sizeof(string));
 }
 
@@ -30,7 +30,7 @@ static void handler1(int sig) {
 //--------------------------------------------------------------------------------
 // Handler for SIGTSTP
 static void handler2(int sig) {
-	char string[] = "SIGTSTP handled\n361> ";
+	char string[] = "SIGTSTP handled\nshell> ";
 	write(1, string, sizeof(string));
 }
 
@@ -42,7 +42,7 @@ static int getInput(char **args, char *inFile, char *outFile, int *append) {
 	int i;
 
 	// Collect user input
-	printf("361> ");
+	printf("shell> ");
 	fgets(buffer, INPUT_LIMIT, stdin);
 	char *token = strtok(buffer, " \t\r\n");
 
